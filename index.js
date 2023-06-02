@@ -2,6 +2,9 @@ const noiseSelectEL = document.querySelector('#noise-type');
 const noiseVariantEl = document.querySelector('#index');
 const noiseSubmitEl = document.querySelector('#noise-submit');
 const noiseImgEl = document.querySelector('#noise-img');
+const overlayEl = document.querySelector('#overlay');
+const colorPickerEl = document.querySelector('#colorpicker');
+const blendSelectEl = document.querySelector('#blendmode');
 
 noiseSelectEL.addEventListener('input', () => {
   noiseSelectEL.value === 'Perlin'
@@ -10,19 +13,21 @@ noiseSelectEL.addEventListener('input', () => {
 });
 
 noiseSubmitEl.addEventListener('click', (e) => {
-  e.preventDefault;
+  e.preventDefault();
   updateNoise();
+  updateOverlay();
 });
 
-// const noiseDataObj = {
-//   default: 14,
-//   Perlin: 24,
-// };
-
-// `${noiseType} ${index} - 512x512.png`
 function updateNoise() {
   noiseImgEl.setAttribute(
     'src',
     `./assets/NoiseTextures512x512/${noiseSelectEL.value}/${noiseSelectEL.value} ${noiseVariantEl.value} - 512x512.png`
   );
+}
+
+function updateOverlay() {
+  blendSelectEl.value === 'none'
+    ? (overlayEl.style.display = 'none')
+    : overlayEl.setAttribute('style', `mix-blend-mode: ${blendSelectEl.value}`);
+  overlayEl.style.background = colorPickerEl.value;
 }

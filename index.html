@@ -37,19 +37,35 @@
         <label for="index">Variant: </label>
         <input type="number" id="index" min="1" max="14" value="1" />
       </div>
-      <button class="form-item" id="noise-submit">Apply</button>
 
       <div class="form-item">
         <label for="">Color: </label>
-        <input type="color" name="" id="" />
+        <input type="color" id="colorpicker" value="#0000FF" />
       </div>
       <div class="form-item">
         <label for="">Blend mode: </label>
-        <select name="Blendmode" id=""></select>
+        <select name="blendmode" id="blendmode">
+          <option value="none">None</option>
+          <option value="normal">Normal</option>
+          <option value="multiply">Multiply</option>
+          <option value="screen">Screen</option>
+          <option value="overlay">Overlay</option>
+          <option value="darken">Darken</option>
+          <option value="lighten">Lighten</option>
+          <option value="color-dodge">Color Dodge</option>
+          <option value="color-burn">Color Burn</option>
+          <option value="difference">Difference</option>
+          <option value="exclusion">Exclusion</option>
+          <option value="hue">Hue</option>
+          <option value="saturation">Saturation</option>
+          <option value="color">Color</option>
+          <option value="luminosity">Luminosity</option>
+        </select>
       </div>
+      <button class="form-item" id="noise-submit">Apply</button>
     </div>
     <div class="isolate">
-      <div class="overlay"></div>
+      <div class="overlay" id="overlay"></div>
       <img
         src="./assets/NoiseTextures512x512/Cracks/Cracks 1 - 512x512.png"
         alt="Noise"
