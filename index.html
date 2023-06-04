@@ -9,60 +9,62 @@
     <title>CSS Layers and Noise Tool</title>
   </head>
   <body>
-    <div class="form-item">
-      <label for="noise-type">Select Noise Type: </label>
-      <select name="Noise Type" id="noise-type">
-        <option value="Cracks">Cracks</option>
-        <option value="Craters">Craters</option>
-        <option value="Gabor">Gabor</option>
-        <option value="Grainy">Grainy</option>
-        <option value="Manifold">Manifold</option>
-        <option value="Marble">Marble</option>
-        <option value="Melt">Melt</option>
-        <option value="Milky">Milky</option>
-        <option value="Perlin">Perlin</option>
-        <option value="Spokes">Spokes</option>
-        <option value="Streak">Streak</option>
-        <option value="Super Noise">Super Noise</option>
-        <option value="Super Perlin">Super Perlin</option>
-        <option value="Swirl">Swirl</option>
-        <option value="Techno">Techno</option>
-        <option value="Turbulence">Turbulence</option>
-        <option value="Vein">Vein</option>
-        <option value="Voronoi">Voronoi</option>
-      </select>
-    </div>
     <div class="container">
-      <div class="form-item">
-        <label for="index">Variant: </label>
-        <input type="number" id="index" min="1" max="14" value="1" />
+      <div class="form-group" id="noise-group">
+        <div class="form-item">
+          <label for="noise-type">Select Noise Type: </label>
+          <select name="Noise Type" id="noise-type">
+            <option value="Cracks">Cracks</option>
+            <option value="Craters">Craters</option>
+            <option value="Gabor">Gabor</option>
+            <option value="Grainy">Grainy</option>
+            <option value="Manifold">Manifold</option>
+            <option value="Marble">Marble</option>
+            <option value="Melt">Melt</option>
+            <option value="Milky">Milky</option>
+            <option value="Perlin">Perlin</option>
+            <option value="Spokes">Spokes</option>
+            <option value="Streak">Streak</option>
+            <option value="Super Noise">Super Noise</option>
+            <option value="Super Perlin">Super Perlin</option>
+            <option value="Swirl">Swirl</option>
+            <option value="Techno">Techno</option>
+            <option value="Turbulence">Turbulence</option>
+            <option value="Vein">Vein</option>
+            <option value="Voronoi">Voronoi</option>
+          </select>
+        </div>
+        <div class="form-item">
+          <label for="index">Variant: </label>
+          <input type="number" id="index" min="1" max="14" value="1" />
+        </div>
       </div>
-
-      <div class="form-item">
-        <label for="">Color: </label>
-        <input type="color" id="colorpicker" value="#0000FF" />
+      <div class="form-group" id="overlay-group">
+        <div class="form-item">
+          <label for="">Color: </label>
+          <input type="color" id="colorpicker" value="#0000FF" />
+        </div>
+        <div class="form-item">
+          <label for="">Blend mode: </label>
+          <select name="blendmode" id="blendmode">
+            <option value="none">None</option>
+            <option value="normal">Normal</option>
+            <option value="multiply">Multiply</option>
+            <option value="screen">Screen</option>
+            <option value="overlay">Overlay</option>
+            <option value="darken">Darken</option>
+            <option value="lighten">Lighten</option>
+            <option value="color-dodge">Color Dodge</option>
+            <option value="color-burn">Color Burn</option>
+            <option value="difference">Difference</option>
+            <option value="exclusion">Exclusion</option>
+            <option value="hue">Hue</option>
+            <option value="saturation">Saturation</option>
+            <option value="color">Color</option>
+            <option value="luminosity">Luminosity</option>
+          </select>
+        </div>
       </div>
-      <div class="form-item">
-        <label for="">Blend mode: </label>
-        <select name="blendmode" id="blendmode">
-          <option value="none">None</option>
-          <option value="normal">Normal</option>
-          <option value="multiply">Multiply</option>
-          <option value="screen">Screen</option>
-          <option value="overlay">Overlay</option>
-          <option value="darken">Darken</option>
-          <option value="lighten">Lighten</option>
-          <option value="color-dodge">Color Dodge</option>
-          <option value="color-burn">Color Burn</option>
-          <option value="difference">Difference</option>
-          <option value="exclusion">Exclusion</option>
-          <option value="hue">Hue</option>
-          <option value="saturation">Saturation</option>
-          <option value="color">Color</option>
-          <option value="luminosity">Luminosity</option>
-        </select>
-      </div>
-      <button class="form-item" id="noise-submit">Apply</button>
     </div>
     <div class="isolate">
       <div class="overlay" id="overlay"></div>

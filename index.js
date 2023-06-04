@@ -1,21 +1,20 @@
 const noiseSelectEL = document.querySelector('#noise-type');
 const noiseVariantEl = document.querySelector('#index');
-const noiseSubmitEl = document.querySelector('#noise-submit');
 const noiseImgEl = document.querySelector('#noise-img');
 const overlayEl = document.querySelector('#overlay');
 const colorPickerEl = document.querySelector('#colorpicker');
 const blendSelectEl = document.querySelector('#blendmode');
 
+document.querySelector('#noise-group').addEventListener('input', updateNoise);
+document
+  .querySelector('#overlay-group')
+  .addEventListener('input', updateOverlay);
+
 noiseSelectEL.addEventListener('input', () => {
   noiseSelectEL.value === 'Perlin'
     ? noiseVariantEl.setAttribute('max', '24')
     : noiseVariantEl.setAttribute('max', '14');
-});
-
-noiseSubmitEl.addEventListener('click', (e) => {
-  e.preventDefault();
-  updateNoise();
-  updateOverlay();
+  noiseVariantEl.value = 1;
 });
 
 function updateNoise() {
@@ -31,3 +30,11 @@ function updateOverlay() {
     : overlayEl.setAttribute('style', `mix-blend-mode: ${blendSelectEl.value}`);
   overlayEl.style.background = colorPickerEl.value;
 }
+
+/*QOL & todo
+Consolidate and divide form handling
+Gradient functionality
+Animation handling
+Preview images for Noise and color
+Tidy up layout and appearance
+*/
